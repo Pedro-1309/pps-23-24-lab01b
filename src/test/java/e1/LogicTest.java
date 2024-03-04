@@ -28,4 +28,12 @@ public class LogicTest {
     Pair<Integer,Integer> knightPosition = logic.getPawnPosition();
     assertEquals(new Pair<Integer,Integer>(knightPosition.getX(), knightPosition.getY()), knightPosition);
   }
+
+  @Test
+  public void isPawnHitTest() {
+    Pair<Integer,Integer> pawn = new Pair<Integer,Integer>(0, 0);
+    Pair<Integer,Integer> knight = new Pair<Integer,Integer>(1, 2);
+    logic = new LogicsImpl(gridSize, pawn, knight);
+    assertTrue(logic.hit(pawn.getX(), pawn.getY()));
+  }
 }
